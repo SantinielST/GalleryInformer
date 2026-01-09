@@ -1,0 +1,30 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GalleryInformer.ViewModels"
+             x:Class="GalleryInformer.Views.GalleryPage"
+             Title="GalleryPage">
+
+    <Grid RowDefinitions="*, Auto">
+        <CollectionView ItemsSource="{Binding Photos}"
+                        SelectedItem="{Binding SelectedPhoto}"
+                        SelectionMode="Single"
+                        Grid.Row="0">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="5">
+                        <Image Source="{Binding FullPath}" Aspect="AspectFill" HeightRequest="150" WidthRequest="150" />
+                        <Label Text="{Binding Name}" HorizontalOptions="Center" LineBreakMode="TailTruncation" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <HorizontalStackLayout Grid.Row="1" Padding="20" Spacing="20" HorizontalOptions="Center">
+            <Button Text="Открыть" Command="{Binding OpenCommand}" BackgroundColor="#2196F3" TextColor="White" WidthRequest="150" />
+            <Button Text="Удалить" Command="{Binding DeleteCommand}" BackgroundColor="#E74C3C" TextColor="White" WidthRequest="150" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

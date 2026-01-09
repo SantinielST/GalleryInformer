@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GalleryInformer.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GalleryInformer.Views"
+    Title="GalleryInformer">
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:PinPage}"
+        Route="PinPage" />
+
+    <ShellContent 
+        Title="Gallery" 
+        ContentTemplate="{DataTemplate local:GalleryPage}" 
+        Route="GalleryPage" />
+
+    <ShellContent  
+        Title="ImageDetail" 
+        ContentTemplate="{DataTemplate local:ImageDetailPage}"
+        Route="ImageDetailPage" />
+
+</Shell>
