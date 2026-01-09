@@ -21,7 +21,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
         <HorizontalStackLayout Grid.Row="1" Padding="20" Spacing="20" HorizontalOptions="Center">
             <Button Text="Открыть" Command="{Binding OpenCommand}" BackgroundColor="#2196F3" TextColor="White" WidthRequest="150" />
             <Button Text="Удалить" Command="{Binding DeleteCommand}" BackgroundColor="#E74C3C" TextColor="White" WidthRequest="150" />
